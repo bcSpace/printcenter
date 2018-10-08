@@ -62,7 +62,6 @@ public class AppTest {
 		buckets.put(currentDoc, docs.get(0).getPriority());
 		
 		for(PrintDocument doc : docs) {
-			System.out.println(doc.getDocument().getFileName());
 			if(buckets.containsKey(doc.getDocument().getFileName())) {
 				if(doc.getPriority() < buckets.get(doc.getDocument().getFileName()))
 					buckets.put(doc.getDocument().getFileName(), doc.getPriority());
@@ -101,7 +100,7 @@ public class AppTest {
 		
 		long totalTime = 0;
 		
-		for(int i = 0; i < 10; i++) {
+		for(int i = 0; i < 50; i++) {
 			List<PrintDocument> docs = new ArrayList<>();
 			for(int ii = 0; ii < 1000000; ii++) 
 				docs.add(new PrintDocument(new DocumentMetaData(random.nextInt(1000000)+".pdf"), random.nextInt(1000000)+1));
@@ -112,8 +111,9 @@ public class AppTest {
 			totalTime+=timeTaken;
 		}
 		
-		long averageTime = totalTime/10; 
+		long averageTime = totalTime/50; 
 		boolean lessThan2 = averageTime < 2000;
+		System.out.println(averageTime);
 		assertEquals(lessThan2, true);
 	}
 }

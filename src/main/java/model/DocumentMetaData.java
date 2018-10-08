@@ -1,13 +1,13 @@
 package model;
 
 public class DocumentMetaData {
-	public long bytes;
+	private long bytes;
 	private String fileName;
 	private FileType fileType;
 
 	public DocumentMetaData(){}
 	
-	public DocumentMetaData(String fileName){
+	public DocumentMetaData(String fileName) {
 		this.fileName = fileName;
 		setFileType(fileName);
 	}
@@ -32,7 +32,7 @@ public class DocumentMetaData {
 		return fileName; 
 	}
 	
-	public static enum FileType{
+	public static enum FileType {
 		PDF("pdf", true),
 		XLSX("xlsx", true),
 		JPG("jpg", true),
