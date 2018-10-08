@@ -32,7 +32,12 @@ Goal is to sort printing documents from print job requests and then send them ou
 
 ### DocumentMetaData
 
-•Includes the actual document data
+• Includes the actual document data
+
+### PrintJob
+
+• Wrapper for multiple document prints with a target location and a date for the print
+• Also includes a job id
 
 ### AppTest
 
